@@ -8,7 +8,7 @@ body {
     padding: 1rem;
     text-align: center;
     background-color: #fafafa;
-    display: flex;
+    /* display: flex; removing this to make forms side by side */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -21,3 +21,13 @@ header {
     background-color: black;
 }
 
+
+.leftHalf {
+    border: solid red 1px;
+    float: left;
+}
+
+.rightHalf {
+    border: solid blue 1px;
+    float: right;
+}

@@ -12,20 +12,26 @@
         <h3>Food Finder</h3>
     </header>
     
-    <!-- Meal Recipe Items -->
-    <div id="meal-recipe-images">
-    <!-- Meal Images Here -->
-    </div>
+    <!-- //dividing form food to the left: -->
+  <div class = "leftHalf">
+      <!-- Meal Recipe Items -->
+      <div id="meal-recipe-images">
+      <!-- Meal Images Here -->
+      </div>
     
-    <!-- Meal Details -->
-    <div id="meal-recipe-detail">
-    <!--<img class="detail-image" src="./assets/image-placeholder.jpg" alt="Insert Name Here" /> -->
-        <h2 class="name">Insert Name Here</h2>
-    </div>
-    <div>
-        <b class="random-recipe">Get a random recipe!</b>
-        <button>Generate</button>
-    </div>
+      <!-- Meal Details -->
+      <div id="meal-recipe-detail">
+      <!--<img class="detail-image" src="./assets/image-placeholder.jpg" alt="Insert Name Here" /> -->
+          <h2 class="name">Insert Name Here</h2>
+      </div>
+      <div>
+          <b class="random-recipe">Get a random recipe!</b>
+          <button id="meal-button">Generate</button>
+      </div>
+   </div>
+
+  <!-- dividing the second form (drinks) to the right) -->
+  <div class ="rightHalf">
     <!-- Cocktail Recipe Items -->
     <div id="cocktail-recipe-images">
         <!-- Cocktail Images Here -->
@@ -36,7 +42,7 @@
     <!--<img class="detail-image" src="./assets/image-placeholder.jpg" alt="Insert Name Here" /> -->
         <h2 class="name">Insert Name Here</h2>
     </div>
-    <form>
+     <form>
         <b> Find a drink! </b>
         <select id = "myList" onchange = "drinkSearch()" >
         <option> ---Choose type--- </option>
@@ -47,5 +53,6 @@
         <!-- <p> Your selected drink type is: </p>
         <input type = "text" id = "favourite" size = "20" </p> -->
         </form>
+    </div> 
   </body>
 </html>
