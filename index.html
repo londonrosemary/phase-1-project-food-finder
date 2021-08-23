@@ -8,6 +8,40 @@
     <title>Food Finder</title>
   </head>
   <body>
-    <h1>Placeholder</h1>
+    <header>
+        <h3>Food Finder</h3>
+    </header>
+    
+    <!-- Meal Recipe Items -->
+    <div id="meal-recipe-images">
+    <!-- Meal Images Here -->
+    </div>
+    
+    <!-- Meal Details -->
+    <div id="meal-recipe-detail">
+    <!--<img class="detail-image" src="./assets/image-placeholder.jpg" alt="Insert Name Here" /> -->
+        <h2 class="name">Insert Name Here</h2>
+    </div>
+
+    <!-- Cocktail Recipe Items -->
+    <div id="cocktail-recipe-images">
+        <!-- Cocktail Images Here -->
+    </div>
+        
+    <!-- Cocktail Details -->
+    <div id="cocktail-recipe-detail">
+    <!--<img class="detail-image" src="./assets/image-placeholder.jpg" alt="Insert Name Here" /> -->
+        <h2 class="name">Insert Name Here</h2>
+    </div>
+    <form>
+        <b> Find a drink! </b>
+        <select id = "myList" onchange = "drinkSearch()" >
+        <option> ---Choose type--- </option>
+        <option> Alcoholic </option>
+        <option> Non-Alcoholic </option>
+        </select>
+        <p> Your selected drink type is: </p>
+        <!-- <input type = "text" id = "favourite" size = "20" </p> -->
+        </form>
   </body>
 </html>
