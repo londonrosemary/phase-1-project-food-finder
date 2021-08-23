@@ -1,4 +1,4 @@
-let baseUrlForMeal = 'http://www.themealdb.com/api/json/v1/1/random.php/'
+let baseUrlForMeal = 'http://www.themealdb.com/api/json/v1/1/random.php/${meal}'
 
 const generateFoodButton = document.querySelector(`#meal-button`)
 

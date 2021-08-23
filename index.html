@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href='style.css' />
-        <script defer src="src/index.js"></script>
-        <title>Food Finder</title>
-    </head>
-    <body>
-        <header>
-            <h3>Food Finder</h3>
-        </header>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Antic Slab' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href='style.css' />
+    <script defer src="src/index.js"></script>
+    <title>Food Finder</title>
+  </head>
+  <body>
+    <header>
+        <h2>Food Finder</h2>
+    </header>
     
     <!-- //dividing form food to the left: -->
         <div class = "leftHalf">
@@ -19,16 +20,16 @@
     <!-- Meal Images Here -->
             </div>
     
-    <!-- Meal Details -->
-            <div id="meal-recipe-detail">
-    <!--<img class="detail-image" src="./assets/image-placeholder.jpg" alt="Insert Name Here" /> -->
-                <h2 class="name">Insert Name Here</h2>
-            </div>
-            <div>
-                <b class="random-recipe">Get a random recipe!</b>
-                <button id="meal-button">Generate</button>
-            </div>
-        </div>
+      <!-- Meal Details -->
+      <div id="meal-recipe-detail">
+      <!--<img class="detail-image" src="./assets/image-placeholder.jpg" alt="Insert Name Here" /> -->
+          <h3 class="name">Insert Name Here</h3>
+      </div>
+      <div>
+          <b class="random-recipe">Get a random recipe!</b>
+          <button id="meal-button">Generate</button>
+      </div>
+   </div>
 
     <!-- dividing the second form (drinks) to the right) -->
         <div class ="rightHalf">
@@ -40,19 +41,19 @@
     <!-- Cocktail Details -->
             <div id="cocktail-recipe-detail">
     <!--<img class="detail-image" src="./assets/image-placeholder.jpg" alt="Insert Name Here" /> -->
-                <h2 class="name">Insert Name Here</h2>
-            </div>
-                <form>
-                    <b> Find a drink! </b>
-                    <select id = "myList" onchange = "drinkSearch()" >
-                        <option> ---Choose type--- </option>
-                        <option> Alcoholic </option>
-                        <option> Non-Alcoholic </option>
-                    </select>
-                    <button>Generate</button>
-    <!-- <p> Your selected drink type is: </p>
-    <input type = "text" id = "favourite" size = "20" </p> -->
-                </form>
-        </div> 
-    </body>
+        <h3 class="name">Insert Name Here</h3>
+    </div>
+     <form>
+        <b> Find a drink! </b>
+        <select id = "myList" onchange = "drinkSearch()" >
+        <option> ---Choose type--- </option>
+        <option> Alcoholic </option>
+        <option> Non-Alcoholic </option>
+        </select>
+        <button id="cocktail-button">Generate</button>
+        <!-- <p> Your selected drink type is: </p>
+        <input type = "text" id = "favourite" size = "20" </p> -->
+        </form>
+    </div> 
+  </body>
 </html>

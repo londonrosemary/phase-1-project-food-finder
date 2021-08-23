@@ -1,13 +1,13 @@
 * {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Antic Slab';
     box-sizing: border-box;
 }
 
 body {
     padding: 1rem;
     text-align: center;
-    background-color: #fafafa;
+    background-color: #B0EACD;
     /* display: flex; removing this to make forms side by side */
     flex-direction: column;
     justify-content: center;
@@ -21,13 +21,47 @@ header {
     background-color: black;
 }
 
+h2{
+    font-size: 40px;
+}
+
+
+h3{
+    font-size: 30px;
+}
+
 
 .leftHalf {
-    border: solid red 1px;
+    margin-top: 100px;
+    margin-left: 100px;
+    border: solid 1px;
     float: left;
+    outline: 4px inset #000;
+    padding: 60px;
+    background-color: white;
 }
 
 .rightHalf {
-    border: solid blue 1px;
+    margin-top: 100px;
+    margin-right: 100px;
+    border: solid 1px;
     float: right;
+    outline: 4px inset #000;
+    padding: 60px;
+    background-color: white;
 }
+
+button {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width: 85px;
+    height:30px;
+    margin: 0 auto;
+    margin-top: 5px;
+    border: 2px solid black;
+    font-size: 18px;
+    text-align: center;
+    background-color: #2fe09c;
+    color: black;
+    }
