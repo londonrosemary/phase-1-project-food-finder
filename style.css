@@ -8,8 +8,6 @@
 body {
     padding: 1rem;
     text-align: center;
-    /*background-color: #B0EACD; */
-    /* display: flex; removing this to make forms side by side */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -19,8 +17,9 @@ body {
 header {
     padding: 0.5rem;
     width: 100%;
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: #f6e1ca;
+    outline: 4px inset #000;
 }
 
 h2{
@@ -40,7 +39,7 @@ h3{
     float: left;
     outline: 4px inset #000;
     padding: 60px;
-    background-color: white;
+    background-color: #f6e1ca;
 }
 
 .rightHalf {
@@ -50,7 +49,7 @@ h3{
     float: right;
     outline: 4px inset #000;
     padding: 60px;
-    background-color: white;
+    background-color: #f6e1ca;
 }
 
 button {
@@ -64,13 +63,22 @@ button {
     border: 2px solid black;
     font-size: 18px;
     text-align: center;
-    background-color: #2fe09c;
+    background-color: #AFD487;
     color: black;
     }
 
 #meal-recipe-images img {
   flex: 0 1 auto;
   height: 250px;
-  margin-right: 0.5rem;
+  margin: 1px;
   cursor: pointer;
+  outline: 4px inset #000;
+}
+
+ul {
+ 
+}
+
+ol {
+ text-align: center;
 }
