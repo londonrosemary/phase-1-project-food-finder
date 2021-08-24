@@ -2,16 +2,18 @@
     margin: 0;
     font-family: 'Antic Slab';
     box-sizing: border-box;
+    /*background-image: 'https://i.pinimg.com/originals/61/93/19/619319e00e04d1d9016192b1a9af391f.jpg'; */
 }
 
 body {
     padding: 1rem;
     text-align: center;
-    background-color: #B0EACD;
+    /*background-color: #B0EACD; */
     /* display: flex; removing this to make forms side by side */
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: url('https://i.pinimg.com/originals/61/93/19/619319e00e04d1d9016192b1a9af391f.jpg');
 }
 
 header {
