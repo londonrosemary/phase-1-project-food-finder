@@ -68,17 +68,22 @@ button {
     }
 
 #meal-recipe-images img {
-  flex: 0 1 auto;
-  height: 250px;
-  margin: 1px;
-  cursor: pointer;
-  outline: 4px inset #000;
+    flex: 0 1 auto;
+    height: 150px;
+    margin: 1px;
+    cursor: pointer;
+    outline: 4px inset #000;
 }
 
+/* .detail-image img {
+    padding: 5px;
+    width: 150px;
+} */
+
 ul {
- 
+
 }
 
 ol {
- text-align: center;
+    text-align: center;
 }

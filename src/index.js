@@ -1,19 +1,14 @@
 const BASE_URL_MEAL = 'https://www.themealdb.com/api/json/v1/1/random.php'
 const BASE_URL_ALCOHOLIC ='https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic'
 const BASE_URL_NONALCOHOLIC = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic'
-const alcoholOption = document.querySelector('#alco')
-const nonAlcoholOption = document.querySelector('#non-alco')
+// const alcoholOption = document.querySelector('#alco')
+// const nonAlcoholOption = document.querySelector('#non-alco')
 const formOptions = document.querySelector('#myList')
 
+function init() {
+    generateRandomMeal()
+}
 
-
-// function makeGetRequest() {
-//     return fetch('https://www.themealdb.com/api/json/v1/1/random.php')
-//         .then(response => response.json())
-//         .then(console.log)
-// }
-
-// makeGetRequest()
 function generateRandomMeal() {
     const mealButton = document.querySelector("#meal-button")
     mealButton.addEventListener('click', e => {
@@ -24,25 +19,42 @@ function generateRandomMeal() {
 }
 
 function createMealImages (response) {
-  response.meals.forEach(meal => {
-      const foodImages = document.querySelector("#meal-recipe-images")
-      const foodImageTag = document.createElement('img')
-      foodImageTag.src = meal.strMealThumb;
-      foodImages.appendChild(foodImageTag)
+    response.meals.forEach(meal => {
+        const foodImages = document.querySelector("#meal-recipe-images")
+        const foodImageTag = document.createElement('img')
+        foodImageTag.src = meal.strMealThumb;
+        foodImages.appendChild(foodImageTag)
 
-      foodImages.addEventListener('click', e => {
-          
-      })
-  })
+        foodImages.addEventListener('click', e => {  
+            const mealDetails = document.getElementById('meal-recipe-detail')
+            const mealDetailImgContainer = document.querySelector("#meal-recipe-detail > img")
+            mealDetailImgContainer.src = meal.strMealThumb
+            
+            const mealNameContainer = document.createElement('h3')
+            mealNameContainer.id = 'meal-detail-name'
+            mealNameContainer.textContent = meal.strMeal
+
+            const mealIngredientsContainer = document.createElement('ul')
+            mealIngredientsContainer.id = 'meal-ingredients'
+            mealIngredientsContainer.textContent = 'Ingredients: '
+
+            const mealIngredientsList = document.createElement('li')
+            mealIngredientsList.textContent = meal['strIngredient']
+            mealIngredientsContainer.appendChild(mealIngredientsList)
+            
+            const mealInstructionsContainer = document.createElement('ul')
+            mealInstructionsContainer.id = 'meal-instructions'
+            mealInstructionsContainer.textContent = "Instructions: "
+
+            const mealInstructionsList = document.createElement('li')
+            mealInstructionsList.textContent = meal['strInstructions']
+            mealInstructionsContainer.appendChild(mealInstructionsList)
+
+            mealDetails.append(mealNameContainer, mealIngredientsContainer, mealInstructionsContainer)
+            
+        })
+    })
 }
-
-function init() {
-    generateRandomMeal()
-    // drinkSearch()
-}
-
-init()
-
 
 function drinkSearch() {
     const cocktailButton = document.querySelector("#cocktail-button")
@@ -63,30 +75,5 @@ function drinkSearch() {
 
 
 
-
-// let baseUrlForMeal = 'http://www.themealdb.com/api/json/v1/1/random.php/${meal}'
-
-// const generateFoodButton = document.querySelector(`#meal-button`)
-
-// //Add event listener click for Generate button: 
-// generateFoodButton.addEventListener('click', event => {
-//     console.log('click',)
-//     fetch(baseUrlForMeal, {
-//         mode: 'no-cors',
-//         credentials: 'include',
-//     })
-//         .then(function (response) {
-//         console.log(response);
-//         return response.json();
-//         })
-//         .then(data => console.log(data))
-//         //.then(resp => resp.json())
-//         // .then(response => response.json())
-//         //    ramenArr.forEach(ramenObject => {
-//         //  function renderRamenImg (ramenObject){
-
-//         //     }
-//             // })
-
-// })
+init()
 
