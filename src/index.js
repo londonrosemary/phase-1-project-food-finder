@@ -1,4 +1,10 @@
 const BASE_URL_MEAL = 'https://www.themealdb.com/api/json/v1/1/random.php'
+const BASE_URL_ALCOHOLIC ='https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic'
+const BASE_URL_NONALCOHOLIC = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic'
+const alcoholOption = document.querySelector('#alco')
+const nonAlcoholOption = document.querySelector('#non-alco')
+const formOptions = document.querySelector('#myList')
+
 
 // function makeGetRequest() {
 //     return fetch('https://www.themealdb.com/api/json/v1/1/random.php')
@@ -18,9 +24,28 @@ function generateRandomMeal() {
 
 function init() {
     generateRandomMeal()
+    // drinkSearch()
 }
 
 init()
+
+
+function drinkSearch() {
+    const cocktailButton = document.querySelector("#cocktail-button")
+    cocktailButton.addEventListener('click', e => {
+        e.preventDefault()
+        if (formOptions.value === 'Alcoholic') {
+            fetch(BASE_URL_ALCOHOLIC)
+            .then(data => data.json())
+            .then(resp => console.log(resp))
+        } 
+        else if (formOptions.value === 'Non-Alcoholic') {
+                fetch(BASE_URL_NONALCOHOLIC)
+                .then(data => data.json())
+                .then(resp => console.log(resp))
+        }
+    })
+}
 
 
 
