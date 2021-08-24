@@ -6,6 +6,7 @@ const nonAlcoholOption = document.querySelector('#non-alco')
 const formOptions = document.querySelector('#myList')
 
 
+
 // function makeGetRequest() {
 //     return fetch('https://www.themealdb.com/api/json/v1/1/random.php')
 //         .then(response => response.json())
@@ -18,8 +19,21 @@ function generateRandomMeal() {
     mealButton.addEventListener('click', e => {
         fetch(BASE_URL_MEAL)
             .then(data => data.json())
-            .then(resp => console.log(resp))
+            .then(resp => createMealImages(resp))
     })
+}
+
+function createMealImages (response) {
+  response.meals.forEach(meal => {
+      const foodImages = document.querySelector("#meal-recipe-images")
+      const foodImageTag = document.createElement('img')
+      foodImageTag.src = meal.strMealThumb;
+      foodImages.appendChild(foodImageTag)
+
+      foodImages.addEventListener('click', e => {
+          
+      })
+  })
 }
 
 function init() {

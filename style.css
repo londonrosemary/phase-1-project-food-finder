@@ -67,3 +67,10 @@ button {
     background-color: #2fe09c;
     color: black;
     }
+
+#meal-recipe-images img {
+  flex: 0 1 auto;
+  height: 250px;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
