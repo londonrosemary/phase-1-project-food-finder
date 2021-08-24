@@ -1,14 +1,18 @@
-const BASE_URL_MEAL = 'www.themealdb.com/api/json/v1/1/random.php'
+const BASE_URL_MEAL = 'https://www.themealdb.com/api/json/v1/1/random.php'
 
+// function makeGetRequest() {
+//     return fetch('https://www.themealdb.com/api/json/v1/1/random.php')
+//         .then(response => response.json())
+//         .then(console.log)
+// }
+
+// makeGetRequest()
 function generateRandomMeal() {
     const mealButton = document.querySelector("#meal-button")
     mealButton.addEventListener('click', e => {
-        fetch(BASE_URL_MEAL, {
-            mode: 'no-cors',
-            credentials: 'include',
-        })
-        .then(data => data.json())
-        .then(resp => console.log(resp))
+        fetch(BASE_URL_MEAL)
+            .then(data => data.json())
+            .then(resp => console.log(resp))
     })
 }
 
