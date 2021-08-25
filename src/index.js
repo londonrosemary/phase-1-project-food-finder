@@ -1,3 +1,4 @@
+//API links
 const BASE_URL_MEAL = 'https://www.themealdb.com/api/json/v1/1/random.php'
 const BASE_URL_ALCOHOLIC ='https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic'
 const BASE_URL_NONALCOHOLIC = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic'
@@ -9,6 +10,7 @@ function init() {
     generateRandomMeal()
 }
 
+//Fetch API data on generate button click
 function generateRandomMeal() {
     const mealButton = document.querySelector("#meal-button")
     mealButton.addEventListener('click', e => {
@@ -18,6 +20,7 @@ function generateRandomMeal() {
     })
 }
 
+//Display data on page, images at top of page and rest of info in detail box on click
 function createMealImages (response) {
     response.meals.forEach(meal => {
         const foodImages = document.querySelector("#meal-recipe-images")
@@ -25,37 +28,35 @@ function createMealImages (response) {
         foodImageTag.src = meal.strMealThumb;
         foodImages.appendChild(foodImageTag)
 
-        foodImages.addEventListener('click', e => {  
+        foodImageTag.addEventListener('click', e => {  
             const mealDetails = document.getElementById('meal-recipe-detail')
             const mealDetailImgContainer = document.querySelector("#meal-recipe-detail > img")
             mealDetailImgContainer.src = meal.strMealThumb
             
-            const mealNameContainer = document.createElement('h3')
-            mealNameContainer.id = 'meal-detail-name'
+            const mealNameContainer = document.getElementById('meal-detail-name')
             mealNameContainer.textContent = meal.strMeal
 
-            const mealIngredientsContainer = document.createElement('ul')
-            mealIngredientsContainer.id = 'meal-ingredients'
-            mealIngredientsContainer.textContent = 'Ingredients: '
+            const mealIngredientsContainer = document.getElementById('meal-ingredients')
+            mealIngredientsContainer.innerHTML = ""
 
-            const mealIngredientsList = document.createElement('li')
-            mealIngredientsList.textContent = meal['strIngredient']
-            mealIngredientsContainer.appendChild(mealIngredientsList)
+            for (let i=1; i<21; i++){
+                if(meal[`strIngredient${i}`]){
+                    let mealIngredientLi = document.createElement('p')
+                    mealIngredientLi.textContent = meal[`strMeasure${i}`] + ' ' + meal[`strIngredient${i}`]
+                    mealIngredientsContainer.appendChild(mealIngredientLi)
+                }
+            }
             
-            const mealInstructionsContainer = document.createElement('ul')
-            mealInstructionsContainer.id = 'meal-instructions'
-            mealInstructionsContainer.textContent = "Instructions: "
+            const mealInstructionsContainer = document.getElementById('meal-instructions')
 
-            const mealInstructionsList = document.createElement('li')
-            mealInstructionsList.textContent = meal['strInstructions']
-            mealInstructionsContainer.appendChild(mealInstructionsList)
-
-            mealDetails.append(mealNameContainer, mealIngredientsContainer, mealInstructionsContainer)
+            const mealInstructionsList = document.getElementById('meal-instructions-list')
+            mealInstructionsList.textContent = `Instructions: ${meal['strInstructions']}`
             
         })
     })
 }
 
+//Fetch drink API data on form submission. Not created as form so need to use click
 function drinkSearch() {
     const cocktailButton = document.querySelector("#cocktail-button")
     cocktailButton.addEventListener('click', e => {
@@ -76,4 +77,3 @@ function drinkSearch() {
 
 
 init()
-

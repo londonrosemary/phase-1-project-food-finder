@@ -80,10 +80,6 @@ button {
     width: 150px;
 } */
 
-ul {
-
-}
-
-ol {
-    text-align: center;
+p {
+    font-size: 20px;
 }
