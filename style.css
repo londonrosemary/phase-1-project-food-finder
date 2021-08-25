@@ -75,10 +75,13 @@ button {
     outline: 4px inset #000;
 }
 
-/* .detail-image img {
-    padding: 5px;
-    width: 150px;
-} */
+#drink-images img {
+    flex: 0 1 auto;
+    height: 150px;
+    margin: 1px;
+    cursor: pointer;
+    outline: 4px inset #000;
+}
 
 p {
     font-size: 20px;

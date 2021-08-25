@@ -57,20 +57,52 @@ function createMealImages (response) {
 }
 
 //Fetch drink API data on form submission. Not created as form so need to use click
+    
     const cocktailButton = document.querySelector("#cocktail-button")
+    
     cocktailButton.addEventListener('click', e => {
          e.preventDefault()
         if (formOptions.value === 'Alcoholic') {
             fetch(BASE_URL_ALCOHOLIC)
             .then(data => data.json())
-            .then(resp => console.log(resp))
+            .then(resp => getDrinkImage(resp))
         } 
         else if (formOptions.value === 'Non-Alcoholic') {
                 fetch(BASE_URL_NONALCOHOLIC)
                 .then(data => data.json())
-                .then(resp => console.log(resp))
+                .then(resp => getDrinkImage(resp))
         }
+     
     })
+   function getDrinkImage(response) {
+        const getRandomDrink = response.drinks[Math.floor(Math.random() * response.drinks.length)];
+        console.log(getRandomDrink)
+
+        const drinkImages = document.querySelector('#drink-images')
+        const drinkImageTag = document.createElement('img')
+
+        drinkImageTag.src = getRandomDrink.strDrinkThumb
+        drinkImages.appendChild(drinkImageTag)
+    
+
+    drinkImageTag.addEventListener('click', e => {  
+        const drinkDetails = document.getElementById('cocktail-name')
+        const drinkDetailImgContainer = document.querySelector("#cocktail-recipe-detail > img")
+        drinkDetailImgContainer.src = getRandomDrink.strDrinkThumb
+        
+        const drinkNameContainer = document.querySelector("#cocktail-recipe-detail > h3")
+        drinkNameContainer.textContent = getRandomDrink.strDrink
+
+        // const drinkContainer = document.getElementById('meal-ingredients')
+        // mealIngredientsContainer.innerHTML = ""
+    })
+}
+
+   
+    
+
+
+
 
     
 
