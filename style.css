@@ -83,3 +83,11 @@ button {
 p {
     font-size: 20px;
 }
+
+#favorite-button {
+    width: 25px;
+    height:25px;
+    margin: 0 auto;
+    margin-top: 5px;
+    background-color: #AFD487;
+}

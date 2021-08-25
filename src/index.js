@@ -57,10 +57,9 @@ function createMealImages (response) {
 }
 
 //Fetch drink API data on form submission. Not created as form so need to use click
-function drinkSearch() {
     const cocktailButton = document.querySelector("#cocktail-button")
     cocktailButton.addEventListener('click', e => {
-        e.preventDefault()
+         e.preventDefault()
         if (formOptions.value === 'Alcoholic') {
             fetch(BASE_URL_ALCOHOLIC)
             .then(data => data.json())
@@ -72,7 +71,8 @@ function drinkSearch() {
                 .then(resp => console.log(resp))
         }
     })
-}
+
+    
 
 
 

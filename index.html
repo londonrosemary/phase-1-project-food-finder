@@ -13,9 +13,13 @@
         <h2>Food Finder</h2>
         <div id="meal-recipe-images">
             <!-- Meal Images Here -->
-                    </div>
+        </div>
+        <div id="drink-images">
+        <h2>Cocktail creator</h2>
+             <!-- Drinks Name Here -->
+        </div>
     </header>
-    
+   
     <!-- //dividing form food to the left: -->
     <div class = "leftHalf">
     <!-- Meal Recipe Items -->
@@ -31,7 +35,10 @@
             <span id="meal-instructions-list"></span>
         </div>
         <div>
-            <b class="random-recipe">Get a random recipe!</b>
+             <button id="favorite-button"> ★ </button>
+        </div>
+        <div>
+            <h3 class="random-recipe">Get a random recipe!</h3>
             <button id="meal-button">Generate</button>
         </div>
     </div>
@@ -50,7 +57,7 @@
     </div>
         <form>
         <b> Find a drink! </b>
-        <select id = "myList" onchange = "drinkSearch()" >
+        <select id = "myList" >
         <option> ---Choose type--- </option>
         <option id= "alco"> Alcoholic </option>
         <option id= "non-alco"> Non-Alcoholic </option>
