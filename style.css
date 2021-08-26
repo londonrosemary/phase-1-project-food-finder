@@ -67,6 +67,16 @@ button {
     background-color: #AFD487;
     color: black;
     }
+/* added scrollbar for food and drinks overflow: */
+#meal-recipe-images {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+#drink-images {
+    overflow: auto;
+    white-space: nowrap;
+}
 
 #meal-recipe-images img {
     flex: 0 1 auto;
@@ -95,3 +105,10 @@ p {
     margin-top: 5px;
     background-color: #AFD487;
 }
+
+#myList {
+    background-color: white;
+    font-weight: 600;
+    font-family: 'Helvetica';  
+}
+
