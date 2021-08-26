@@ -1,79 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
     <head>
         <link href='https://fonts.googleapis.com/css?family=Antic Slab' rel='stylesheet'>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href='style.css' />
-        <script defer src="src/index.js"></script>
+        <meta charset='UTF-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <link rel='stylesheet' href='style.css' />
+        <script defer src='src/index.js'></script>
         <title>Food Finder</title>
     </head>
     <body>
         <header>
             <h2>Food Finder</h2>
-            <div id="meal-recipe-images">
+            <div id='meal-recipe-images'>
     <!-- Meal Images Here -->
             </div>
         </header>
         <header>
             <h2>Cocktail Creator</h2>
-            <div id="drink-images">
+            <div id='drink-images'>
     <!-- Drinks Name Here -->
             </div>
         </header>
-        <div id="form-container">
-            <form id="suggestions">
-                <label for="drink-name">Name: </label>
-                <input type="text", id= "new-drink-name"></input>
-                <label for="drink-type">Type: </label>
-                <input type="text", id= "new-drink-type"></input>
-                <label for="drink-image">Image: </label>
-                <input type = "text", id ="new-drink-image"></input>
-                <label for="drink-comment">Comment: </label>
-                <input type = "text", id ="new-drink-comment"></input>
-                <input type="submit", id="submit-button", value="Submit"/>   
+        <div id='form-container'>
+            <form id='suggestions'>
+                <label for='drink-name'>Name: </label>
+                <input type='text', id='new-drink-name'></input>
+                <label for='drink-type'>Type: </label>
+                <input type='text', id='new-drink-type'></input>
+                <label for='drink-image'>Image: </label>
+                <input type='text', id='new-drink-image'></input>
+                <label for='drink-comment'>Comment: </label>
+                <input type='text', id='new-drink-comment'></input>
+                <input type='submit', id='submit-button', value='Submit'/>   
             </form>
         </div>
     <!-- //dividing form food to the left: -->
-        <div class = "leftHalf">
+        <div class='leftHalf'>
     <!-- Meal Recipe Items -->
                 
         
     <!-- Meal Details -->
-            <div id="meal-recipe-detail" style="max-width: 500px;">
-                <img class="detail-image" style="max-width:300px; max-height: 250px;"/>
-                <h3 id="meal-detail-name"></h3>
-                <h3 id="meal-ingredients"></h3>
-                <span id="meal-ingredients-list"></span>
-                <h3 id="meal-instructions"></h3>
-                <span id="meal-instructions-list"></span>
+            <div id='meal-recipe-detail' style='max-width: 400px;'>
+                <img class='detail-image' style='max-width:300px; max-height: 250px;'/>
+                <h3 id='meal-detail-name'></h3>
+                <h3 id='meal-ingredients'></h3>
+                <span id='meal-ingredients-list'></span>
+                <h3 id='meal-instructions'></h3>
+                <span id='meal-instructions-list'></span>
             </div>
             <div>
-                <h3 class="random-recipe">Get a random recipe!</h3>
-                <button class= "random-buttons" id="meal-button">Generate</button>
+                <h3 class='random-recipe'>Get a random recipe!</h3>
+                <button class='random-buttons' id='meal-button'>Generate</button>
             </div>
         </div>
 
     <!-- dividing the second form (drinks) to the right) -->
-        <div class ="rightHalf">
+        <div class='rightHalf'>
     <!-- Cocktail Recipe Items -->
-            <div id="cocktail-recipe-images">
+            <div id='cocktail-recipe-images'>
             <!-- Cocktail Images Here -->
             </div>
         
     <!-- Cocktail Details -->
-            <div id="cocktail-recipe-detail" style="max-width: 500px;">
-                <img class="detail-image" style="max-width:300px; max-height: 250px;"/>
-                <h3 id="cocktail-name"></h3>
+            <div id='cocktail-recipe-detail' style='max-width: 500px;'>
+                <img class='detail-image' style='max-width:300px; max-height: 250px;'/>
+                <h3 id='cocktail-name'></h3>
             </div>
             <form>
                 <h3> Find a drink! </h3>
-                <select id = "myList" >
+                <select id='myList' >
                 <option> ---Choose type--- </option>
-                <option id= "alco"> Alcoholic </option>
-                <option id= "non-alco"> Non-Alcoholic </option>
+                <option id='alco'> Alcoholic </option>
+                <option id='non-alco'> Non-Alcoholic </option>
                 </select>
-                <button class="random-buttons" id="cocktail-button">Generate</button>
+                <button class='random-buttons' id='cocktail-button'>Generate</button>
             </form>
         </div> 
     </body>

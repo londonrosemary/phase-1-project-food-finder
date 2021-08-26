@@ -5,8 +5,10 @@ const BASE_URL_NONALCOHOLIC = 'https://www.thecocktaildb.com/api/json/v1/1/filte
 
 //Locate items that will be referenced more than once
 const formOptions = document.querySelector('#myList');
-const mealButton = document.querySelector("#meal-button");
-const cocktailButton = document.querySelector("#cocktail-button");
+const mealButton = document.querySelector('#meal-button');
+const cocktailButton = document.querySelector('#cocktail-button');
+const submitButton = document.getElementById('submit-button');
+const suggestionForm = document.getElementById('suggestions');
 
 //To be called on page load
 function init() {
@@ -25,16 +27,15 @@ function generateRandomMeal() {
 //Display data on page, images at top of page and rest of info in detail box on click
 function createMealImages (response) {
     response.meals.forEach(meal => {
-        const foodImages = document.querySelector("#meal-recipe-images");
+        const foodImages = document.querySelector('#meal-recipe-images');
         const foodImageTag = document.createElement('img');
 
         foodImageTag.src = meal.strMealThumb;
-        // foodImages.appendChild(foodImageTag) #to do: delete if we don't need
         foodImages.insertBefore(foodImageTag, foodImages.firstChild);
 
         foodImageTag.addEventListener('click', e => {  
             const mealDetails = document.getElementById('meal-recipe-detail');
-            const mealDetailImgContainer = document.querySelector("#meal-recipe-detail > img");
+            const mealDetailImgContainer = document.querySelector('#meal-recipe-detail > img');
             
             mealDetailImgContainer.src = meal.strMealThumb;
             
@@ -42,7 +43,7 @@ function createMealImages (response) {
             mealNameContainer.textContent = meal.strMeal;
 
             const mealIngredientsContainer = document.getElementById('meal-ingredients');
-            mealIngredientsContainer.innerHTML = "";
+            mealIngredientsContainer.innerHTML = '';
 
             for (let i=1; i<21; i++){
                 if(meal[`strIngredient${i}`]){
@@ -98,10 +99,10 @@ function getDrinkImage(response) {
     
     drinkImageTag.addEventListener('click', e => {  
         const drinkDetails = document.getElementById('cocktail-name');
-        const drinkDetailImgContainer = document.querySelector("#cocktail-recipe-detail > img");
+        const drinkDetailImgContainer = document.querySelector('#cocktail-recipe-detail > img');
         drinkDetailImgContainer.src = getRandomDrink.strDrinkThumb;
         
-        const drinkNameContainer = document.querySelector("#cocktail-recipe-detail > h3");
+        const drinkNameContainer = document.querySelector('#cocktail-recipe-detail > h3');
         drinkNameContainer.textContent = getRandomDrink.strDrink;
     });
 }
@@ -112,6 +113,22 @@ cocktailButton.addEventListener('mouseover', e => {
 });
 
 cocktailButton.addEventListener('mouseout', e => {
+    e.target.style.backgroundColor = '#AFD487';
+});
+
+//Form takes input and alerts user that submit was successful
+suggestionForm.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('New submission successful!');
+    suggestionForm.reset();
+    })
+
+//Submit button styling using event listener
+submitButton.addEventListener('mouseover', e => {
+    e.target.style.backgroundColor = '#EB4E4E';
+});
+
+submitButton.addEventListener('mouseout', e => {
     e.target.style.backgroundColor = '#AFD487';
 });
 

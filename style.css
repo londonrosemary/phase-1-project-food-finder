@@ -33,7 +33,7 @@ h3{
 
 
 .leftHalf {
-    margin-top: 100px;
+    margin-top: 20px;
     margin-left: 100px;
     border: solid 1px;
     float: left;
@@ -43,7 +43,7 @@ h3{
 }
 
 .rightHalf {
-    margin-top: 100px;
+    margin-top: 20px;
     margin-right: 100px;
     border: solid 1px;
     float: right;
@@ -81,7 +81,10 @@ h3{
     text-align: center;
     background-color: #AFD487;
     color: black;
-    
+}
+#submit-button:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 button {
@@ -99,7 +102,7 @@ button {
     color: black;
 }
 button:active {
-    /* box-shadow: 0 5px #666; */
+    box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
 /* added scrollbar for food and drinks overflow: */
