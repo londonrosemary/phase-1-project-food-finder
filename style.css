@@ -66,7 +66,11 @@ button {
     text-align: center;
     background-color: #AFD487;
     color: black;
-    }
+}
+button:active {
+    /* box-shadow: 0 5px #666; */
+    transform: translateY(4px);
+}
 /* added scrollbar for food and drinks overflow: */
 #meal-recipe-images {
     overflow: auto;

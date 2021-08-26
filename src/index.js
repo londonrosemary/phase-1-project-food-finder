@@ -28,7 +28,8 @@ function createMealImages (response) {
         const foodImages = document.querySelector("#meal-recipe-images")
         const foodImageTag = document.createElement('img')
         foodImageTag.src = meal.strMealThumb;
-        foodImages.appendChild(foodImageTag)
+        // foodImages.appendChild(foodImageTag) #to do: delete if we don't need
+        foodImages.insertBefore(foodImageTag, foodImages.firstChild);
 
         foodImageTag.addEventListener('click', e => {  
             const mealDetails = document.getElementById('meal-recipe-detail')
@@ -89,7 +90,8 @@ function getDrinkImage(response) {
     const drinkImageTag = document.createElement('img')
 
     drinkImageTag.src = getRandomDrink.strDrinkThumb
-    drinkImages.appendChild(drinkImageTag)
+    // drinkImages.appendChild(drinkImageTag) #to do: delete this line if needed
+    drinkImages.insertBefore(drinkImageTag, drinkImages.firstChild);
     
     drinkImageTag.addEventListener('click', e => {  
         const drinkDetails = document.getElementById('cocktail-name')
