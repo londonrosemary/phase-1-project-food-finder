@@ -80,7 +80,7 @@ cocktailButton.addEventListener('click', e => {
     }
 })
 
-//
+//Selects random drink and displays on page
 function getDrinkImage(response) {
     const getRandomDrink = response.drinks[Math.floor(Math.random() * response.drinks.length)];
     console.log(getRandomDrink)
