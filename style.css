@@ -52,6 +52,38 @@ h3{
     background-color: #f6e1ca;
 }
 
+#form-container {
+    max-width: 300px;
+	margin: 30px auto;
+	border-radius: 8px;
+	padding: 20px; 
+    background-color: #f6e1ca;
+    outline: 4px inset #000;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#form-container input {
+    width: 250px; 
+}
+
+#submit-button {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width: 85px;
+    height:30px;
+    margin: 0 auto;
+    margin-top: 5px;
+    border: 2px solid black;
+    font-size: 18px;
+    text-align: center;
+    background-color: #AFD487;
+    color: black;
+    
+}
+
 button {
     display:flex;
     justify-content:center;
@@ -101,13 +133,6 @@ p {
     font-size: 20px;
 }
 
-#favorite-button {
-    width: 25px;
-    height:25px;
-    margin: 0 auto;
-    margin-top: 5px;
-    background-color: #AFD487;
-}
 
 #myList {
     background-color: white;
