@@ -2,17 +2,19 @@
 const BASE_URL_MEAL = 'https://www.themealdb.com/api/json/v1/1/random.php'
 const BASE_URL_ALCOHOLIC ='https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic'
 const BASE_URL_NONALCOHOLIC = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic'
-// const alcoholOption = document.querySelector('#alco')
-// const nonAlcoholOption = document.querySelector('#non-alco')
-const formOptions = document.querySelector('#myList')
 
+//Locate items that will be referenced more than once
+const formOptions = document.querySelector('#myList')
+const mealButton = document.querySelector("#meal-button")
+const cocktailButton = document.querySelector("#cocktail-button")
+
+//To be called on page load
 function init() {
     generateRandomMeal()
 }
 
 //Fetch API data on generate button click
 function generateRandomMeal() {
-    const mealButton = document.querySelector("#meal-button")
     mealButton.addEventListener('click', e => {
         fetch(BASE_URL_MEAL)
             .then(data => data.json())
@@ -51,40 +53,44 @@ function createMealImages (response) {
 
             const mealInstructionsList = document.getElementById('meal-instructions-list')
             mealInstructionsList.textContent = `Instructions: ${meal['strInstructions']}`
-            
         })
     })
 }
 
+//Meal button styling using event listener
+mealButton.addEventListener('mouseover', e => {
+    e.target.style.backgroundColor = '#EB4E4E'
+})
+mealButton.addEventListener('mouseout', e => {
+    e.target.style.backgroundColor = '#AFD487'
+})
+
 //Fetch drink API data on form submission. Not created as form so need to use click
-    
-    const cocktailButton = document.querySelector("#cocktail-button")
-    
-    cocktailButton.addEventListener('click', e => {
-         e.preventDefault()
-        if (formOptions.value === 'Alcoholic') {
-            fetch(BASE_URL_ALCOHOLIC)
-            .then(data => data.json())
-            .then(resp => getDrinkImage(resp))
-        } 
-        else if (formOptions.value === 'Non-Alcoholic') {
-                fetch(BASE_URL_NONALCOHOLIC)
-                .then(data => data.json())
-                .then(resp => getDrinkImage(resp))
-        }
-     
-    })
-   function getDrinkImage(response) {
-        const getRandomDrink = response.drinks[Math.floor(Math.random() * response.drinks.length)];
-        console.log(getRandomDrink)
+cocktailButton.addEventListener('click', e => {
+    e.preventDefault()
+    if (formOptions.value === 'Alcoholic') {
+        fetch(BASE_URL_ALCOHOLIC)
+        .then(resp => resp.json())
+        .then(data => getDrinkImage(data))
+    } 
+    else if (formOptions.value === 'Non-Alcoholic') {
+        fetch(BASE_URL_NONALCOHOLIC)
+            .then(resp => resp.json())
+            .then(data => getDrinkImage(data))
+    }
+})
 
-        const drinkImages = document.querySelector('#drink-images')
-        const drinkImageTag = document.createElement('img')
+//
+function getDrinkImage(response) {
+    const getRandomDrink = response.drinks[Math.floor(Math.random() * response.drinks.length)];
+    console.log(getRandomDrink)
 
-        drinkImageTag.src = getRandomDrink.strDrinkThumb
-        drinkImages.appendChild(drinkImageTag)
+    const drinkImages = document.querySelector('#drink-images')
+    const drinkImageTag = document.createElement('img')
+
+    drinkImageTag.src = getRandomDrink.strDrinkThumb
+    drinkImages.appendChild(drinkImageTag)
     
-
     drinkImageTag.addEventListener('click', e => {  
         const drinkDetails = document.getElementById('cocktail-name')
         const drinkDetailImgContainer = document.querySelector("#cocktail-recipe-detail > img")
@@ -92,20 +98,15 @@ function createMealImages (response) {
         
         const drinkNameContainer = document.querySelector("#cocktail-recipe-detail > h3")
         drinkNameContainer.textContent = getRandomDrink.strDrink
-
-        // const drinkContainer = document.getElementById('meal-ingredients')
-        // mealIngredientsContainer.innerHTML = ""
     })
 }
 
-   
-    
-
-
-
-
-    
-
-
+//Cocktail button styling using event listener
+cocktailButton.addEventListener('mouseover', e => {
+    e.target.style.backgroundColor = '#EB4E4E'
+})
+cocktailButton.addEventListener('mouseout', e => {
+    e.target.style.backgroundColor = '#AFD487'
+})
 
 init()

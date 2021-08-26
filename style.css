@@ -20,6 +20,7 @@ header {
     color: black;
     background-color: #f6e1ca;
     outline: 4px inset #000;
+    margin: 10px;
 }
 
 h2{

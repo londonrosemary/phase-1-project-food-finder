@@ -1,71 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link href='https://fonts.googleapis.com/css?family=Antic Slab' rel='stylesheet'>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href='style.css' />
-    <script defer src="src/index.js"></script>
-    <title>Food Finder</title>
-  </head>
-  <body>
-    <header>
-        <h2>Food Finder</h2>
-        <div id="meal-recipe-images">
-            <!-- Meal Images Here -->
-        </div>
-        <div id="drink-images">
-        <h2>Cocktail creator</h2>
-             <!-- Drinks Name Here -->
-        </div>
-    </header>
-   
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Antic Slab' rel='stylesheet'>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href='style.css' />
+        <script defer src="src/index.js"></script>
+        <title>Food Finder</title>
+    </head>
+    <body>
+        <header>
+            <h2>Food Finder</h2>
+            <div id="meal-recipe-images">
+    <!-- Meal Images Here -->
+            </div>
+        </header>
+        <header>
+            <div id="drink-images">
+                <h2>Cocktail Creator</h2>
+    <!-- Drinks Name Here -->
+            </div>
+        </header>
+
     <!-- //dividing form food to the left: -->
-    <div class = "leftHalf">
+        <div class = "leftHalf">
     <!-- Meal Recipe Items -->
-            
-    
+                
+        
     <!-- Meal Details -->
-        <div id="meal-recipe-detail" style="max-width: 500px;">
-            <img class="detail-image" style="max-width:300px; max-height: 250px;"/>
-            <h3 id="meal-detail-name"></h3>
-            <h3 id="meal-ingredients"></h3>
-            <span id="meal-ingredients-list"></span>
-            <h3 id="meal-instructions"></h3>
-            <span id="meal-instructions-list"></span>
+            <div id="meal-recipe-detail" style="max-width: 500px;">
+                <img class="detail-image" style="max-width:300px; max-height: 250px;"/>
+                <h3 id="meal-detail-name"></h3>
+                <h3 id="meal-ingredients"></h3>
+                <span id="meal-ingredients-list"></span>
+                <h3 id="meal-instructions"></h3>
+                <span id="meal-instructions-list"></span>
+            </div>
+            <div>
+                <h3 class="random-recipe">Get a random recipe!</h3>
+                <button class= "random-buttons" id="meal-button">Generate</button>
+            </div>
         </div>
-        <div>
-             <button id="favorite-button"> ★ </button>
-        </div>
-        <div>
-            <h3 class="random-recipe">Get a random recipe!</h3>
-            <button id="meal-button">Generate</button>
-        </div>
-    </div>
 
     <!-- dividing the second form (drinks) to the right) -->
         <div class ="rightHalf">
     <!-- Cocktail Recipe Items -->
             <div id="cocktail-recipe-images">
-        <!-- Cocktail Images Here -->
+            <!-- Cocktail Images Here -->
             </div>
-    
+        
     <!-- Cocktail Details -->
-        <div id="cocktail-recipe-detail" style="max-width: 500px;">
-            <img class="detail-image" style="max-width:300px; max-height: 250px;"/>
-        <h3 id="cocktail-name"></h3>
-    </div>
-        <form>
-        <b> Find a drink! </b>
-        <select id = "myList" >
-        <option> ---Choose type--- </option>
-        <option id= "alco"> Alcoholic </option>
-        <option id= "non-alco"> Non-Alcoholic </option>
-        </select>
-        <button id="cocktail-button">Generate</button>
-        <!-- <p> Your selected drink type is: </p>
-        <input type = "text" id = "favourite" size = "20" </p> -->
-        </form>
-    </div> 
+            <div id="cocktail-recipe-detail" style="max-width: 500px;">
+                <img class="detail-image" style="max-width:300px; max-height: 250px;"/>
+                <h3 id="cocktail-name"></h3>
+            </div>
+            <form>
+                <h3> Find a drink! </h3>
+                <select id = "myList" >
+                <option> ---Choose type--- </option>
+                <option id= "alco"> Alcoholic </option>
+                <option id= "non-alco"> Non-Alcoholic </option>
+                </select>
+                <button class="random-buttons" id="cocktail-button">Generate</button>
+            </form>
+        </div> 
     </body>
 </html>
